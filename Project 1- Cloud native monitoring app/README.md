@@ -11,6 +11,8 @@
 
 # Let’s Start the Project 
 
+![Project-1](../Screenshots/Project-1.webp)
+
 ## **Part 1: Deploying the Flask application locally**
 
 ### Step 1: Clone the code
