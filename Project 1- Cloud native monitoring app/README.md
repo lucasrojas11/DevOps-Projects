@@ -1,4 +1,4 @@
-# Cloud Native Resource Monitoring Python App on K8s
+# Python Application on EKS
 
 ## **Prerequisites** !
 (Things to have before starting the projects)
