@@ -155,6 +155,7 @@ Click “EC2”
 Click “Next”
 
 Click the “Search” field.
+
 ![](../Screenshots/Project%20-%202/0_VMxDHqO9DvaAqNS5.webp)
 
 Search these Policy Names and make it check
@@ -186,6 +187,7 @@ Click “Next”
 On the next page remove t3.medium and add t2.medium as instance type.
 
 Select t2.medium
+
 ![](../Screenshots/Project%20-%202/0_rV6UF420Sss-jlHi.webp)
 ![](../Screenshots/Project%20-%202/0_LEUUTCy3fnii_bq4.webp)
 
@@ -204,15 +206,18 @@ Click "Create"
 Node Groups will take some time to create, Click “EC2” or Search for Ec2
 
 Click “Launch instance”
+
 ![](../Screenshots/Project%20-%202/0_xhaliHThImnp56NT.webp)
 
 
 Add Name and AMI as Amazon Linux
+
 ![](../Screenshots/Project%20-%202/0_4B3OuAfztgYx97Gq.webp)
 
 Take instance type as t2.micro and select keypair with default security Group.
 
 Click “Advanced details”
+
 ![](../Screenshots/Project%20-%202/0_1cv9DCNsRoahy6bi.webp)
 
 Click on the IAM instance Profile and Create a New IAM profile.
@@ -224,6 +229,7 @@ Click “Create role”
 ![](../Screenshots/Project%20-%202/0__JrNXKgjAgLX3C4b.webp)
 
 Click “Choose a service or use case”
+
 ![](../Screenshots/Project%20-%202/0_oXEhz-XCR2R7wjU7.webp)
 
 Click “EC2”
