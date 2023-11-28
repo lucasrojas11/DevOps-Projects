@@ -574,3 +574,6 @@ Query the MongoDB database directly to observe the updated vote data. In the ter
 kubectl exec -it mongo-0 -- mongo langdb --eval "db.languages.find().pretty()"
 ```
 ![](../Screenshots/Project%20-%202/0_GiK7HJzMP6M5_UjJ.jpg)
+
+## Summary
+In this project, I learned how to deploy a cloud-native application on EKS. Once deployed and operational, I used the browser on my local workstation to test the application. Subsequently, I confirmed that my activity within the application generated data that was captured and recorded successfully in the backend of the MongoDB ReplicaSet within the cluster.
