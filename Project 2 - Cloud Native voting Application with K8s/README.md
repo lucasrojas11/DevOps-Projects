@@ -13,52 +13,83 @@ to deploy and manage this application effectively, we laverage Kubernetes and a 
 - **Service**: Kubernetes services ensure that users can access the application by directing incoming traffic to the appropriate instances.
 - **StatefulSet**: For components requiring statefulness, such as the MongoDB replica set, Kubernetes StatefulSets are employed to maintain order and unique identities.
 - **PersistentVolume and PersistentVolumeClaim**: These Kubernetes resources manage the storage required for the application, ensuring data persistence and scalability.
+
 ![Project 2](../Screenshots/Project%20-%202/Project%20-%202(1).png)
 ## Steps to Deploy
 Navigate to Your Aws Console
 
 Click the “Search” field and search For EKS or select directly Elastic Kubernetes Service on the Recently visited tab
 ![](../Screenshots/Project%20-%202/0_0qGdeArOJ8B0woga.webp)
+
 Click “Add cluster”
+
 ![](../Screenshots/Project%20-%202/0_X-cSGJWA7GZewEEl.webp)
+
 Click “Create”
+
 ![](../Screenshots/Project%20-%202/0_PZyMJr0pknYbmcbO.webp)
+
 Click the "Name" field and enter a unique name for the cluster that is anything you want. For example, I used Cloud and version 1.27
+
 ![](../Screenshots/Project%20-%202/0_ivgu5DKmhezf_x-C.webp)
+
 Click on Amazon EKS User Guide for New IAM role creation.
+
 ![](../Screenshots/Project%20-%202/0_ZIZ5NeyXTZzHQeR4.webp)
 You will get the below webpage and
 
 Click "console.aws.amazon.com/iam"
+
 ![](../Screenshots/Project%20-%202/0_rlWZI9g-RFvnRVO4.webp)
+
 You will be redirected to the IAM dashboard
 
 Click "Roles"
+
 ![](../Screenshots/Project%20-%202/0_LPCnuMJG-a8MMmjF.webp)
+
 Click “Create role”
+
 ![](../Screenshots/Project%20-%202/0_p0hHDABYQjwKIU72.webp)
+
 Click “Allow AWS services like EC2, Lambda, or others to perform actions in this account.”
+
 ![](../Screenshots/Project%20-%202/0_gGPewuq6it8unNyE.webp)
+
 Click “Choose a service or use case”
+
 ![](../Screenshots/Project%20-%202/0_lqMnQ2pIVcACbmXI.webp)
 
 Type “EKS”
 
 Click this radio button with EKS-Cluster
+
 ![](../Screenshots/Project%20-%202/0_p0VLWgtgy--0v73R.webp)
 
 Click “Next” and you will directly redirect to policy and click Next ( we have only one policy for it and it selects by default for EKS) that is `AmazonEKSClusterPolicy`
+
 ![](../Screenshots/Project%20-%202/0_QEmMZx41qBXQJlRa.webp)
+
 Click the “Role name” field and provide the name (`myAmazonEKSClusterRole`)
+
 ![](../Screenshots/Project%20-%202/0_ky4ksCYT8aB-4G7Z.webp)
+
 Click “Create role”
+
 ![](../Screenshots/Project%20-%202/0_Z-EtJzNQNzjVCl4X.webp)
+
 Click “myAmazonEKSClusterRole” that is created at Cluster Service Role.
+
 ![](../Screenshots/Project%20-%202/0_8wMU_q-dq2PtRXtj.webp)
+
 Click “Next”
+
 ![](../Screenshots/Project%20-%202/0_-eykme_klJM4jeTl.webp)
+
 Click “Select security groups” and Use the existing security group or create a new security Group
+
 ![](../Screenshots/Project%20-%202/0_4Ti8vy9G4A7O1h_p.webp)
+
 Click “Next”
 
 Click “Next”
@@ -70,11 +101,17 @@ No changes Click “Next” (`Default no need to change anything`)
 Click “Create”
 
 In your cluster Click “Add-ons”
+
 ![](../Screenshots/Project%20-%202/0_SLFZmK7uVdFhLkpt.webp)
+
 Click “Get more add-ons”
+
 ![](../Screenshots/Project%20-%202/0_As-BGCuNAEVXDT8e.webp)
+
 Click this checkbox. with Amazon EBS CSI Driver
+
 ![](../Screenshots/Project%20-%202/0_nljtRNPLMcKKJse0.webp)
+
 No changes Click “Next” (`Default no need to change anything`)
 
 No changes Click “Next” (`Default no need to change anything`)
@@ -83,23 +120,36 @@ Click “Create”
 
 Once your Cluster up to active status
 ![](../Screenshots/Project%20-%202/0_f1M3BQqZIT5V3wai.webp)
+
 Click “Compute”
+
 ![](../Screenshots/Project%20-%202/0_7fTbSiJfBs2_E-G5.webp)
+
 Click on “Add node group”
+
 ![](../Screenshots/Project%20-%202/0_xqWPhvRsIqy1oUei.webp)
+
 Click the “Name” field.
 
 Write any Name you want (`NodeGroup`)
 
 Click “Select role” and click on the IAM console
 ![](../Screenshots/Project%20-%202/0_03M6H_8Q6fIK5mgS.webp)
+
 Click “Create role”
+
 ![](../Screenshots/Project%20-%202/0_uyD1tyAspgXRhpgS.webp)
-Click “Allow AWS services like EC2, Lambda, or others to perform actions in this account.”
+
+Click “Allow AWS services like EC2, Lambda, or others to perform actions in this 
+account.”
 ![](../Screenshots/Project%20-%202/0_rSRiH0CG-DkuX6Dj.webp)
+
 Click “Choose a service or use case”
+
 ![](../Screenshots/Project%20-%202/0_eTc3UMjrg7oADbIK.webp)
+
 Click “EC2”
+
 ![](../Screenshots/Project%20-%202/0_7gmcXDJfQB2lpCVf.webp)
 
 Click “Next”
@@ -124,8 +174,11 @@ Click the “Role name” field.
 Add Role name as myAmazonNodeGroupPolicy
 
 Click “Create role”
+
 ![](../Screenshots/Project%20-%202/0_Ku3QQCs5UQ3cWAte.webp)
+
 Add a role that was created before `“myAmazonNodeGroupPolicy"`
+
 ![](../Screenshots/Project%20-%202/0_aPy90oxnE3kJ9M37.webp)
 
 Click “Next”
@@ -135,17 +188,24 @@ On the next page remove t3.medium and add t2.medium as instance type.
 Select t2.medium
 ![](../Screenshots/Project%20-%202/0_rV6UF420Sss-jlHi.webp)
 ![](../Screenshots/Project%20-%202/0_LEUUTCy3fnii_bq4.webp)
+
 Click “Next”
+
 ![](../Screenshots/Project%20-%202/0_8S3u8x5hitYtujOi.webp)
+
 Click "Next"
+
 ![](../Screenshots/Project%20-%202/0_ZDuWvQwcTXmS8QZn.webp)
+
 Click "Create"
+
 ![](../Screenshots/Project%20-%202/0_K54ACjBMpooxhXVu.webp)
 
 Node Groups will take some time to create, Click “EC2” or Search for Ec2
 
 Click “Launch instance”
 ![](../Screenshots/Project%20-%202/0_xhaliHThImnp56NT.webp)
+
 
 Add Name and AMI as Amazon Linux
 ![](../Screenshots/Project%20-%202/0_4B3OuAfztgYx97Gq.webp)
@@ -154,13 +214,18 @@ Take instance type as t2.micro and select keypair with default security Group.
 
 Click “Advanced details”
 ![](../Screenshots/Project%20-%202/0_1cv9DCNsRoahy6bi.webp)
+
 Click on the IAM instance Profile and Create a New IAM profile.
+
 ![](../Screenshots/Project%20-%202/0_p8nqErFqsTV6scCQ.webp)
+
 Click “Create role”
+
 ![](../Screenshots/Project%20-%202/0__JrNXKgjAgLX3C4b.webp)
 
 Click “Choose a service or use case”
 ![](../Screenshots/Project%20-%202/0_oXEhz-XCR2R7wjU7.webp)
+
 Click “EC2”
 
 Click the “Search” field.
@@ -169,6 +234,7 @@ Type “EBS”
 
 Click this checkbox with the policy name `AmazonEBSCSIDriverPolicy.`
 ![](../Screenshots/Project%20-%202/0_amC2A76C2gLd7y-2.webp)
+
 Click “Next”
 
 Click the “Role name” field and provide the name as `EKSaccess.`
@@ -178,12 +244,19 @@ Click “Create role”
 
 Click on the newly created role “EKSaccess”
 ![](../Screenshots/Project%20-%202/0_xUWnQ_7frnHHsHqa.webp)
+
 Click “Add permissions”
+
 ![](../Screenshots/Project%20-%202/0_6lxmUMI5nnnguwc9.webp)
+
 Click “Create inline policy”
+
 ![](../Screenshots/Project%20-%202/0_Za7p0SFcL9Sb66Qb.webp)
+
 Click “JSON”
+
 ![](../Screenshots/Project%20-%202/0_J74u4SmHI00dwAGd.webp)
+
 REMOVE EVERYTHING FROM THE POLICY EDITOR
 
 And add this
@@ -302,6 +375,7 @@ Edit the config map for access
 kubectl edit configmap aws-auth --namespace kube-system
 ```
 ![](../Screenshots/Project%20-%202/0_QsxNA63TwYDr2AXp.webp)
+
 Go to your Iam roles and copy the arn of iam role of ec2 instance that is attached
 
 Add your Role arn to the config map
@@ -321,6 +395,7 @@ Add your Role arn to the config map
     - system:masters
 ```
 ![](../Screenshots/Project%20-%202/0_8u_ThKELymW8zhKz.webp)
+
 save and exit
 ```
 Esc --> shift+: 
@@ -531,6 +606,7 @@ Test the full end-to-end cloud-native application
 <frontend service external-ip>
 ```
 ![](../Screenshots/Project%20-%202/0_1gKMxgqwcM7LkU1Y.jpg)
+
 If you get output like this, Delete the service of frontend and deployment
 ```
 kubectl delete -f frontend-service.yaml
@@ -541,6 +617,7 @@ Now copy your API External service ip
 kubectl get svc
 ```
 ![](../Screenshots/Project%20-%202/0_hL13NOFQVuIoDHQ2.jpg)
+
 Now open your frontend-deployment. yaml file
 ```
 sudo vi frontend-deployment.yaml
