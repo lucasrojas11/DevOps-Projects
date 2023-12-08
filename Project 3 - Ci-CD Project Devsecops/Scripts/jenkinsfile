@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    tools {
+        jdk 'jdk17'
+        maven 'maven3'
+    }
+    environment {
+        SCANER_HOME=tool 'sonar-scaner'
+    }
+    stages {
+        stage('clean workspace'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage ('Checkout From Git'){
+            steps {
+                git branch : 'main', url: ''
+            }
+        }
+    }
+}
