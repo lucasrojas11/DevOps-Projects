@@ -6,6 +6,19 @@ We will be deploying our application in two ways, using Docker Container and oth
 And integrates manual approval also in this project.
 ![Project 3 architecture](../Screenshots/Project%20-%203/Screenshot%20(828).png)
 
+aplication code: https://github.com/Aj7Ay/Petclinic-Real.git
+
+**Tools:**
+- **AWS EC2:** Amazon Elastic Compute Cloud provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 reduces hardware costs so you can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few virtual servers as you need
+- **Jenkins:** is an open source automation server used to build, test, and deploy software applications, is a widely adopted used by development teams for CI/CD to accelerate software delivery by reliably building, testing and deploying applications with speed, scale and efficiency
+- **Docker:** is an open platform that enables developers to package applications along with their dependencies into standardized, isolated containers that can run consistently across different environments and infrastructures. It facilitates portability, consistency, and efficiency in developing, shipping, and running applications.
+- **Trivy:**  is an open source vulnerability scanner for container images and filesystems. It detects vulnerabilities and misconfigurations in Kubernetes, Docker, and OS packages by analyzing metadata in a lightweight and fast manner without needing to spin up containers.
+- **Sonarqube:**  is an open source platform for continuous inspection of code quality to perform automatic reviews and highlight bugs, security vulnerabilities, and code smells in over 20 programming languages. It provides detailed reports and dashboards to foster cleaner, safer code.
+- **Maven:** is a build automation tool used primarily for Java projects to manage and describe projects including dependencies, build, and documentation. It provides a standardized way to build and distribute packages leveraging a central repository of dependencies and plugins that brings consistency and efficiency to the build process. 
+- **Jenkins Pipeline:**  is a suite of plugins and tools that enable Jenkins users to create pipelines as code by writing declarative or scripted pipelines coded in a DSL syntax and integrated with Jenkinsfiles. This allows creating CI/CD workflows programmatically with version control instead of static job configs.
+- **Tomcat:** is an open-source application server developed by the Apache Software Foundation. Providing a pure Java HTTP web server environment for Java code to run in. It is used to deploy Java servlets and JavaServer Pages (JSP) for building and deploying web applications.
+- **kubernetes:** is an open source container orchestration system for automating deployment, scaling, and management of containerized applications. It facilitates container clustering and lifecycle management for fault tolerance and high availability by coordinating compute, network, and storage infrastructure across data centers and clouds.
+
 Steps:-
 
 - Step 1 — Create an Ubuntu T2 Large Instance
