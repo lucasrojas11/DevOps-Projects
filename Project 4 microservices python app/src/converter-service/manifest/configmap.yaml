@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: converter-configMap
+data:
+  MP3_QUEUE: "mp3"
+  VIDEO_QUEUE: "video"
+  MONGODB_URI: "mongodb://lucas:lucas1234@mongodb:27017/mp3s?authSource=admin" #nodeip:nodeport
+
