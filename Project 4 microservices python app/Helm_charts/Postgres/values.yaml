@@ -1,0 +1,11 @@
+service: 
+  name: db
+  port: 5432
+  nodeport: 30002
+
+container:
+  image: postgress
+  env:
+    user: lucas
+    password: cnd2023
+    db: authdb
