@@ -1,0 +1,14 @@
+apiversion: v1
+kind: PersistentVolume
+metadata: 
+  name: rabitmq-pv-volume
+  labels: 
+    type: local
+spec: 
+  storageClassName: manual
+  capacity: 
+    storage: 10Gi
+  accessModes:
+    - ReadwriteOnce
+  hostPath:
+    path: "/mnt/data"
