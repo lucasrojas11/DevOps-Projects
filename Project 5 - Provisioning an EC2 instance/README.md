@@ -27,6 +27,7 @@ Verify the Installation:
 Open a new Command Prompt or PowerShell window.
 
 Type `terraform --version` and press Enter. This command should display the Terraform version, confirming that Terraform is installed and in your PATH.
+
 ![](../Screenshots/Project%20-%205/Screenshot%20(952).png)
 
 Your Terraform installation is now complete, and you can start using Terraform to manage your infrastructure as code.
