@@ -139,7 +139,7 @@ Provide your Aws Access key and Secret Access key
 resource "aws_instance" "web" {
   ami                    = "ami-0f5ee92e2d63afc18"   #change ami id for different region
   instance_type          = "t2.large"
-  key_name               = "Mumbai"
+  key_name               = "slayer"
   vpc_security_group_ids = [aws_security_group.Jenkins-sg.id]
   user_data              = templatefile("./install.sh", {})
 
@@ -189,28 +189,31 @@ resource "aws_security_group" "Jenkins-sg" {
 terraform {
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+        source = "hashicorp/aws"
+        version = "~> 5.0"
     }
   }
 }
 
-# Configure the AWS Provider
+#Configure the AWS Provider
 provider "aws" {
-  region = "ap-south-1"  #change your region
+  region = "us-east-1"
 }
-
 ```
 This will install Jenkins and Docker and Sonarqube and trivy:
 **install.sh**
 ```
 #!/bin/bash
+
+#install java
 sudo apt update -y
 wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | tee /etc/apt/keyrings/adoptium.asc
 echo "deb [signed-by=/etc/apt/keyrings/adoptium.asc] https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | tee /etc/apt/sources.list.d/adoptium.list
 sudo apt update -y
 sudo apt install temurin-17-jdk -y
 /usr/bin/java --version
+
+#install jenkins
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
 echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
 sudo apt-get update -y
